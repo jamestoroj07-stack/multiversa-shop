@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CYBER-STORE | Tienda Futurista</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <header class="header-cyber">
+        <div class="logo">
+            <i class="fa-solid fa-atom fa-spin"></i> CYBER<span>NEXUS</span>
+        </div>
+        <nav class="nav-links">
+            <a href="#catalogo">Catálogo</a>
+            <a href="#pasos">¿Cómo Comprar?</a>
+        </nav>
+        <div class="cart-btn" onclick="toggleCart()">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span id="cart-count">0</span>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>BIENVENIDO AL FUTURO DEL COMMERCE</h1>
+            <p>Tecnología de última generación al alcance de un clic.</p>
+            <a href="#catalogo" class="btn-neon">Explorar Productos</a>
+        </div>
+    </section>
+
+    <section class="steps-section" id="pasos">
+        <h2 class="section-title">PROCESO DE COMPRA RÁPIDO</h2>
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-num">01</div>
+                <i class="fa-solid fa-magnifying-glass-location"></i>
+                <h3>Elige tu Producto</h3>
+                <p>Navega por nuestro catálogo de última tecnología.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-num">02</div>
+                <i class="fa-solid fa-cart-plus"></i>
+                <h3>Añade al Carrito</h3>
+                <p>Haz clic en "AGREGAR" en los artículos que desees.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-num">03</div>
+                <i class="fa-solid fa-credit-card"></i>
+                <h3>Checkout Seguro</h3>
+                <p>Procesa tu pedido directo a nuestro WhatsApp.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="catalog" id="catalogo">
+        <h2 class="section-title">PRODUCTOS DESTACADOS</h2>
+        <div class="products-grid" id="products-container"></div>
+    </section>
+
+    <aside class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3><i class="fa-solid fa-bag-shopping"></i> Carrito Cyber</h3>
+            <button class="close-cart" onclick="toggleCart()">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-footer">
+            <div class="total-price">Total: $<span id="cart-total">0</span></div>
+            <button class="btn-checkout" onclick="checkoutWhatsApp()">
+                <i class="fa-brands fa-whatsapp"></i> Finalizar Compra
+            </button>
+        </div>
+    </aside></aside>
+
+    <!-- Ventana Emergente (Modal) de Medios de Pago -->
+    <div id="payment-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closePaymentModal()">&times;</span>
+            <h2>Medios de Pago</h2>
+            <p>Realiza tu transferencia a cualquiera de las siguientes cuentas:</p>
+            
+            <div class="payment-methods">
+                <div class="method-card">
+                    <h3>Nequi / Daviplata</h3>
+                    <p><strong>Número:</strong> 310 697 0738</p>
+                </div>
+                <div class="method-card">
+                    <h3>Bancolombia</h3>
+                    <p><strong>Llave:</strong> 3106970738</p>
+                </div>
+            </div>
+
+            <p class="payment-instruction">Una vez realizado el pago, haz clic abajo para confirmar tu pedido por WhatsApp adjuntando el comprobante.</p>
+            
+            <button class="btn-confirm-pay" onclick="enviarWhatsAppConPago()">
+                <i class="fa-brands fa-whatsapp"></i> Enviar Comprobante por WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
